@@ -1,0 +1,32 @@
+
+#pie{
+    background-color: #1C3947;
+}
+
+#encabezado{
+    background-color: rgb(53,58,64);
+}
+
+#encabezado a, #pie a{
+    color: rgb(180, 180, 180);
+
+}
+#encabezado a:focus, #pie a:focus,#encabezado a:hover, #pie a:hover{
+    color: white;
+}
+
+#BsAs{
+    background-color: #353A40;
+    color: #FFF;
+}
+
+.enviar{
+    width: 100%;
+    background-color: #96C93E;
+    border-color:#FFF ;
+    
+}
+.enviar:hover, .enviar:focus{
+    border:1px solid #1C3947;
+
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" >
+    <title>Bs As</title>
+</head>
+<body>
+    <header>
+        <!-- Encabezado -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0 ">
+          <div class="container-fluid" id="encabezado">
+            <a class="navbar-brand" href="#" onclick="proximamente()"><img src="images/codoacodo.png" alt="c" width="100"></a>
+            <span class="fw-bold text-light fs-5">Conf Bs As</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse row mx-2" id="navbarSupportedContent">
+              <ul class="navbar-nav justify-content-end me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="proximamente()">La conferencia</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="proximamente()">Los oradores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="proximamente()">El lugar y la fecha</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="orador" onclick="proximamente()">Conviertete en orador</a>
+                </li>
+                <li class="nav-item" id="tickets">
+                  <a class="nav-link" id="comprar" onclick="proximamente()" > Comprar tickets</a>
+                </li>
+              </ul>
+    
+            </div>
+          </div>
+        </nav>
+  
+    </header>
+
+    <main>
+        <div class="container text-center my-4">
+            <div class="row align-items-center justify-content-center gap-2">
+              <div class="col-xl-2  col-3 mx-0 p-3 border-3 border border-primary-subtle" id="estudiante">
+                    <p class="fw-semibold fs-4">Estudiante</p>
+                    <p>Tienen descuento</p>
+                    <p class="fw-semibold fs-4">80%</p>
+                    <p class="fw-light">*presentar documentacion</p> 
+                </div>
+              <div class="col-xl-2 col-3 p-3 border-3  border border-success-subtle " onclick="trainee()">
+                <p class="fw-semibold fs-4">Trainee</p>
+                <p>Tienen descuento</p>
+                <p class="fw-semibold fs-4">50%</p>
+                <p class="fw-light">*presentar documentacion</p> 
+              </div>
+              <div class="col-xl-2 col-3 p-3 border-3  border border-warning-subtle " onclick="junior()">
+                <p class="fw-semibold fs-4">Junior</p>
+                <p>Tienen descuento</p>
+                <p class="fw-semibold fs-4">25%</p>
+                <p class="fw-light">*presentar documentacion</p> 
+              </div>
+            </div>
+          </div>
+
+        <div class="container" name="comprar_tickets" id="comprar_tickets">
+            <p class="text-center">VENTA</p>
+            <p class="fs-1 fw-bold text-center my-3 text-uppercase">Valor de tickets $200</p>
+            <form action="javascript:submit()" method="post" id="signup" name="signup">
+              <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                  <input type="text" name="nombre" id="nombre" class="form-control" required placeholder="Nombre">
+                  <div id="message" class="form-text" hidden>
+                    Introduzca solo letras (A-Z) o (a-z). Máximo 35 caracteres.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input type="text" name="apellido" id="apellido" class="form-control" required placeholder="Apellido">
+                  <div id="message2" class="form-text" hidden>
+                    Introduzca solo letras (A-Z) o (a-z). Máximo 35 caracteres.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row justify-content-center">
+                <div class="col-md-8 mb-3">
+                  <input type="email" name="email" id="email" class="form-control" required placeholder="Correo">
+                  <small></small>
+                </div>
+                
+              </div>
+    
+              <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <label for="cantidad">Cantidad</label>
+                  <input type="number" name="cantidad" id="cantidad" class="form-control" required placeholder="Cantidad">
+                  <small></small>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="descuento">Categoria</label>
+                  <select class="form-select" id="descuento" name="descuento" >
+                    <option value="80">Estudiante</option>
+                    <option value="50">Trainee</option>
+                    <option value="25">Junior</option>
+                  </select>
+                </div>
+               
+              </div>
+              
+              <div class="row justify-content-center">
+                <div class="col-8 mb-3">
+                  <input type="text" disabled class="form-control bg-primary-subtle py-3" id="precioFinal" name="precioFinal"  placeholder="Total a Pagar: $">
+                </div>
+              </div>
+             
+              
+              <div class="row mb-5 justify-content-center">
+                <div class="col-md-4">
+                    <input type="reset" value="Borrar" class="btn btn-primary enviar">
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" onclick="precioTotal" name="resumen" id="resumen" class="btn btn-primary enviar" value="Resumen">
+
+                </div>
+
+              </div>
+            </form>
+          </div>
+          
+    </main>
+    
+    <footer>
+        <div class="col">
+            <!-- pie de pagina -->
+      
+            <ul class="nav justify-content-evenly" id="pie">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" onclick="proximamente()">Preguntas frecuentes</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link active"  href="#" onclick="proximamente()">Contáctanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#" onclick="proximamente()">Prensa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="proximamente()">Conferencias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="proximamente()">Términos y condiciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="proximamente()">Privacidad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#" onclick="proximamente()">Estudiantes</a>
+              </li>
+            </ul>
+          </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>
