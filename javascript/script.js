@@ -1,13 +1,13 @@
 estudiante.onclick = function estudiante(){
-    window.open("../document/estudiante.html");
+    window.open("./document/estudiante.html");
 }
 
 function trainee(){
-   window.open("../document/trainee.html");
+   window.open("./document/trainee.html");
 }
 
 function junior(){
-    window.open("../document/junior.html");
+    window.open("./document/junior.html");
 }
 
 resumen.onclick = function precioTotal(){
