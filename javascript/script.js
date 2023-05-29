@@ -11,14 +11,17 @@ function junior(){
 }
 
 resumen.onclick = function precioTotal(){
-    
-    let entradas=document.getElementById("cantidad").value;
+    let n = document.getElementById("nombre").value;
+    let a = document.getElementById("apellido").value;
+    let c = docume.getElementById("email").value;
 
+    let entradas=document.getElementById("cantidad").value;
     let descuento=document.getElementById("descuento").value;
 
     let precioFinal =(entradas*200) - ((entradas*200) *descuento/100);
-    
-    document.getElementById("precioFinal").value= "Total a pagar: $"+precioFinal+" pesos argentinos";
+  
+      document.getElementById("precioFinal").value= "Total a pagar: $"+precioFinal+" pesos argentinos";
+        
 
 
 }
