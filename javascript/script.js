@@ -11,18 +11,42 @@ function junior(){
 }
 
 resumen.onclick = function precioTotal(){
-    let n = document.getElementById("nombre").value;
-    let a = document.getElementById("apellido").value;
-    let c = docume.getElementById("email").value;
+    
+  let nombre = document.getElementById("nombre").value;
+  let apellido = document.getElementById("apellido").value;
+  let correo = document.getElementById("email").value;
 
-    let entradas=document.getElementById("cantidad").value;
-    let descuento=document.getElementById("descuento").value;
 
-    let precioFinal =(entradas*200) - ((entradas*200) *descuento/100);
+  let entradas=document.getElementById("cantidad").value;
+  let descuento=document.getElementById("descuento").value;
+
+  let precioFinal =(entradas*200) - ((entradas*200) *descuento/100);
   
-      document.getElementById("precioFinal").value= "Total a pagar: $"+precioFinal+" pesos argentinos";
-        
+  if(entradas && nombre && apellido && correo){
+    document.getElementById("precioFinal").value= "Total a pagar: $"+precioFinal+" pesos argentinos";
 
+    resumenNombre.hidden = false;
+    resumenApellido.hidden = false;
+    resumenCorreo.hidden = false;
+    resumenCantidad.hidden = false;
+    resumenCategoria.hidden = false;
+    resumenTotal.hidden = false;
+
+    document.getElementById("resumenNombre").innerHTML= "Nombre: "+nombre;
+    document.getElementById("resumenApellido").innerHTML= "Apellido: "+apellido;
+    document.getElementById("resumenCorreo").innerHTML= "Correo: "+correo;
+    document.getElementById("resumenCantidad").innerHTML= "Cantidad: "+entradas;
+    document.getElementById("resumenCategoria").innerHTML= "Descuento: "+descuento+"%";
+    document.getElementById("resumenTotal").innerHTML= "Total a pagar: $"+precioFinal+" pesos argentinos";
+  }else{
+    resumenNombre.hidden = true;
+    resumenApellido.hidden = true;
+    resumenCorreo.hidden = true;
+    resumenCantidad.hidden = true;
+    resumenCategoria.hidden = true;
+    resumenTotal.hidden = true;
+
+  }
 
 }
 nombre.onkeyup = function validar() {
